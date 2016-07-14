@@ -1,3 +1,4 @@
 class Tweet < ActiveRecord::Base
-  # Remember to create a migration!
+  validates :content, presence: true
+  belongs_to :user
 end
