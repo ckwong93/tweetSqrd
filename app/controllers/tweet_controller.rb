@@ -24,4 +24,4 @@ put '/tweets/:id' do
 end
 
 delete '/tweets/:id' do
-ent
+end

@@ -36,7 +36,7 @@ if params[:password1] == params[:password2]
 end
 
 get '/users/:id' do
-
+  p params
   #gets params from url
 
   @user = User.find(params[:id]) #define instance variable for view
