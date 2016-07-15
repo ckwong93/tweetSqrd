@@ -1,0 +1,10 @@
+<h3>  <%= @user.name %>  </h3>
+<h5>  <%= @user.email %> </h5>
+
+<h3><%= @user.name %> is following:</h3>
+
+<ul>
+<% @followees.each do |followee| %>
+  <li><a href="/users/<%= followee.id %>"><%= User.find(followee.id).name %></a></li>
+<% end %>
+</ul>
