@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+    	<ul>
+		<% @tweet.each do |tweet| %>
+		  <li><%= tweet.content %> at <%= tweet.created_at %></li>
+		<% end %>
+
+		</ul>
+		<br><br>
+    </div>
+  </div>
+</div>
+
+

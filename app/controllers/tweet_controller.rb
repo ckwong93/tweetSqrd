@@ -17,7 +17,7 @@ post '/tweets' do
   @error = @tweet.errors.full_messages
 
   if @tweet.save
-    redirect "/"
+    redirect "/users/#{current_user.id}"
   else
     @error = "Invalid information"
     erb :"/tweets/new"
