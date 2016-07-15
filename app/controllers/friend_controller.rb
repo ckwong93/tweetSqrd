@@ -15,3 +15,11 @@ get 'users/:id/followers' do
   erb :'followers/index' #show all friends view (index)
 
 end
+
+post '/users/:id/follower/new' do
+  p Friend.create(follower_id: session[:user_id], followee_id: params[:id])
+
+  redirect "/users/#{params[:id]}"
+end
+
+

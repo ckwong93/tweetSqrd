@@ -30,6 +30,14 @@ get '/users/:id' do
 
   @user = User.find(params[:id]) #define instance variable for view
   @tweets = Tweet.find_by(user_id: params[:id])
+  p @tweets
+
+  if Friend.find_by(follower_id: session[:user_id], followee_id: params[:id])
+    @following = true
+    p "Hello"
+  end
+
+  p @following
 
   erb :'users/show' #show single user view
 
