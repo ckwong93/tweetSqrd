@@ -1,9 +1,11 @@
+<center>
+<h1>Please Log in</h1>
 <form action="/sessions" method="post">
-	Enter Email: <input type="text" name="email"> <br>
-	Enter Password: <input type="password" name="password"> <br>
-	<input type="submit" value="Login">
+	Enter Email: <input type="text" name="email"> <br><br>
+	Enter Password: <input type="password" name="password"> <br><br>
+	<input class="btn btn-info" type="submit" value="Login">
 </form>
-
+</center>
 
 <% if @error %>
   <%= @error %>

@@ -1,3 +1,27 @@
 textarea{
 	resize: none;
 }
+
+body{
+background: url('/images/tweet2.jpg');
+background-repeat:   no-repeat;
+background-size:     cover;
+background-position: center;
+display: block;
+}
+
+h1{
+  color: white;
+}
+
+form{
+  color: white;
+}
+
+input{
+  color: black;
+}
+
+textarea{
+  color: black;
+}
