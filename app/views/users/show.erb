@@ -9,16 +9,20 @@
   <input type="submit" value="Follow Me!">
 <% end %>
 </form>
+<a href="/users/<%= @user.id %>/followers">All followers</a>
+<a href="/users/<%= @user.id %>/friends">All followees</a>
 
 <ul>
-<% if @tweets.class == Array %>
-  <% @tweets.each do |tweet| %>
-    <li><%= tweet.content %> at <%= tweet.created_at %></li>
+<%  if @tweets != nil %>
+  <% if @tweets.class == Array %>
+    <% @tweets.each do |tweet| %>
+      <li><%= tweet.content %> at <%= tweet.created_at %></li>
+    <% end %>
+  <% elsif @tweets.id.class == Fixnum %>
+    <li><%= @tweets.content %> at <%= @tweets.created_at %></li>
+  <% else %>
+    <p>This user doesn't have any tweets.</p>
   <% end %>
-<% elsif @tweets.id.class == Fixnum %>
-  <li><%= @tweets.content %> at <%= @tweets.created_at %></li>
-<% else %>
-  <p>This user doesn't have any tweets.</p>
-<% end %>
+  <% end %>
 </ul>
 <br>
