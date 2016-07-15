@@ -12,7 +12,7 @@ end
 
 #create the new tweet
 post '/tweets' do
-  @tweet = Tweet.new(user_id: current_user.id, content: params[:tweet][:content])
+  @tweet = Tweet.new(user_id: current_user.id, content: params[:tweet][":content"])
   
   @error = @tweet.errors.full_messages
 
