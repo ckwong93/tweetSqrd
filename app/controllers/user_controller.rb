@@ -1,9 +1,7 @@
 get '/users' do
-
   @users = User.all #define instance variable for view
 
   erb :'users/index' #show all users view (index)
-
 end
 
 # get '/users/new' do
