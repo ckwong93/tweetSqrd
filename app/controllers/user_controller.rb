@@ -23,6 +23,18 @@ end
 
 # end
 
+post '/users' do
+if params[:password1] == params[:password2]
+  @user = User.new(name: params[:username], email: params[:email], password: params[:password1])
+      if @user.save
+        redirect '/'
+      else
+        erb :register
+      end
+  end
+
+end
+
 get '/users/:id' do
 
   #gets params from url
