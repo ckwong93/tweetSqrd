@@ -1,5 +1,5 @@
-<form action="/wishes/<%=  @wish.id %>" method="post">
+<form action="/tweets/<%=  @tweet.id %>" method="post">
 			<input id="hidden" type="hidden" name="_method" value="put">
-			<input input type="text" name="users[:content]" placeholder="Enter tweet here" maxlength="140"><br>
+			<input input type="text" name="tweet[:content]" placeholder="Enter tweet here" maxlength="140"><br>
 			<input type="submit" value="submit">	
 </form>
