@@ -4,32 +4,21 @@ get '/users' do
   erb :'users/index' #show all users view (index)
 end
 
-# get '/users/new' do
+get '/users/new' do
 
-#   erb :'users/new' #show new users view
+  erb :'users/new' #show new users view
 
-# end
+end
 
-# post '/users' do
 
-#   #below works with properly formatted params in HTML form
-#   @user = User.new(params[:user]) #create new user
+post '/users/new' do
 
-#   if @user.save #saves new user or returns false if unsuccessful
-#     redirect '/users' #redirect back to users index page
-#   else
-#     erb :'users/new' # show new users view again(potentially displaying errors)
-#   end
-
-# end
-
-post '/users' do
-if params[:password1] == params[:password2]
-  @user = User.new(name: params[:username], email: params[:email], password: params[:password1])
+  if params[:password1] == params[:password2]
+    @user = User.new(name: params[:username], email: params[:email], password: params[:password1])
       if @user.save
         redirect '/'
       else
-        erb :register
+        erb :'users/new'
       end
   end
 

@@ -1,7 +1,3 @@
-get '/index' do
-  erb :login
+get '/' do
+  erb :index
 end
-
-
-
-
