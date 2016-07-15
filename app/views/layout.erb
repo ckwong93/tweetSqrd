@@ -19,5 +19,11 @@
 </head>
 <body>
   <%= yield %>
+  <% if current_user %>
+    <a href= "/sessions/delete"> Logout </a>
+  <% else %>
+    <a href="/sessions/new">Login</a> |
+    <a href="/users/new">Register</a>
+  <%end%>
 </body>
 </html>
